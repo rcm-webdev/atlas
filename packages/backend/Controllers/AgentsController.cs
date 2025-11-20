@@ -34,4 +34,15 @@ public class AgentsController : ControllerBase
         return Ok(agent);
     }
 
+    [HttpPost]
+    public ActionResult<Agent> PostNewAgent(Agent newAgent)
+    {
+        if (newAgent == null)
+            return BadRequest();
+
+        agents.Add(newAgent);
+        return CreatedAtAction(nameof(GetAgentById), new { id = newAgent.Id }, newAgent);
+
+    }
+
 }
