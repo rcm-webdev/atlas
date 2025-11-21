@@ -16,5 +16,9 @@ POST {{rootURL}}/api/agents
 Content-Type: application/json
 
 ###
-PUT {{rootURL}}/api/agents/5
+PUT {{rootURL}}/api/agents
+Content-Type: application/json
+
+###
+DELETE {{rootURL}}/api/agents
 Content-Type: application/json

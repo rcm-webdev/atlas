@@ -56,4 +56,15 @@ public class AgentsController : ControllerBase
         return NoContent();
     }
 
+    [HttpDelete("{id}")]
+    public IActionResult DeleteAgent(int id)
+    {
+        var agent = agents.FirstOrDefault(x => x.Id == id);
+        if (agent == null)
+            return NotFound();
+        agents.Remove(agent);
+        return NoContent();
+
+    }
+
 }
