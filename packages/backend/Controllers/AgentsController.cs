@@ -44,5 +44,16 @@ public class AgentsController : ControllerBase
         return CreatedAtAction(nameof(GetAgentById), new { id = newAgent.Id }, newAgent);
 
     }
+    [HttpPut("{id}")]
+    public IActionResult UpdateAgent(int id, Agent updatedAgent)
+    {
+        var agent = agents.FirstOrDefault(x => x.Id == id);
+        if (agent == null)
+            return NotFound();
+        agent.Id = updatedAgent.Id;
+        agent.Email = updatedAgent.Email;
+        agent.Phone = updatedAgent.Phone;
+        return NoContent();
+    }
 
 }

@@ -10,3 +10,11 @@ Accept: application/json
 ###
 GET {{rootURL}}/agents/id/2
 Accept: application/json
+
+###
+POST {{rootURL}}/api/agents
+Content-Type: application/json
+
+###
+PUT {{rootURL}}/api/agents/5
+Content-Type: application/json
