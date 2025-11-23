@@ -12,6 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "lucide-react": "^0.554.0",
     "vue": "^3.5.22"
   },
   "devDependencies": {
