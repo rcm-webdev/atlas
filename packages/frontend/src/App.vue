@@ -1,11 +1,15 @@
-<script setup></script>
+<script setup>
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
+const layout = computed(() => route.meta.layout || 'div');
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <component :is="layout">
+    <router-view />
+  </component>
 </template>
 
 <style scoped></style>
